@@ -27,4 +27,14 @@ public class Account {
 	private List<Post> posts;
 	@OneToMany(mappedBy="account")
 	private List<Comment> comments;
+	public void addPost(Post p1) {
+		// TODO Auto-generated method stub
+		if (posts == null) posts = new ArrayList<Post>();
+		posts.add(p1);
+	}
+	public void addComment(Comment c1) {
+		// TODO Auto-generated method stub
+		if (comments == null) comments = new ArrayList<Comment>();
+		comments.add(c1);
+	}
 }
