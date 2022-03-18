@@ -13,4 +13,7 @@ public class Stock {
 	private int id;
 	@ManyToOne(optional=false)
 	private Writing writing;
+	
+	private String ticker;
+	private String price; // doesn't have to be numeric since no operations will be done.
 }

@@ -23,14 +23,13 @@ import lombok.Data;
  *
  */
 
-@Data
+@Data // to be replaced with other annotations later
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="writing_type", 
-discriminatorType = DiscriminatorType.INTEGER)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Writing {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	// @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	private int id;
 	private String content;
 	@OneToMany(mappedBy="writing")

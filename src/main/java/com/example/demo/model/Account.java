@@ -14,10 +14,11 @@ import javax.persistence.OneToMany;
 import lombok.Data;
 
 @Entity
-@Data
+@Data // to be replaced
 public class Account {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+    // @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;
 	private String userid;
 	private String email;

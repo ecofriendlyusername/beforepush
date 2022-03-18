@@ -3,8 +3,9 @@
  */
 package com.example.demo.model;
 
-import javax.persistence.DiscriminatorValue;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -14,6 +15,8 @@ import lombok.Data;
  */
 @Data
 @Entity
-@DiscriminatorValue("1")
 public class Post extends Writing {
+	private String title;
+	@OneToMany(mappedBy="post")
+	private List<Comment> comments;
 }
